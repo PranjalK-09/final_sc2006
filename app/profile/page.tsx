@@ -41,7 +41,6 @@ export default function ProfilePage() {
     "Culinary",
     "Hospitality",
     "Tourism",
-    "Finance",
     "Psychology",
     "Veterinary",
     "Optometry",

@@ -1,48 +1,40 @@
-// login page
-
 "use client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import { login } from "@/lib/auth"; // Import our Firebase login function
-
-
+import { login } from "@/lib/auth"; // Firebase login function
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter(); //imported from next navigation
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(""); // Reset error on submit
+    setError("");
 
-    // Basic email validation
     if (!/\S+@\S+\.\S+/.test(email)) {
       setError("Please enter a valid email.");
       return;
     }
 
-    // Basic password validation
     if (password.length < 6) {
       setError("Password must be at least 6 characters long.");
       return;
     }
 
     try {
-      // Call the login function from Firebase Auth
       await login(email, password);
-      // Redirect to dashboard after successful login
-      router.push("/dashboard");
+      router.push("/dashboard"); // redirect on successful login
     } catch (err: any) {
       setError(err.message || "Login failed.");
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
+      <div className="bg-white p-8 rounded-lg shadow-md w-96 relative z-10">
         <h2 className="text-2xl font-bold mb-4 text-center text-black">Login to EduPath</h2>
 
         {error && <p className="text-red-500 text-sm mb-3 text-center">{error}</p>}
@@ -59,7 +51,7 @@ export default function LoginPage() {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-2">
             <label className="block text-gray-700 font-medium">Password</label>
             <input
               type="password"
@@ -68,6 +60,13 @@ export default function LoginPage() {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
               placeholder="Enter your password"
             />
+          </div>
+
+          {/* Forgot password link */}
+          <div className="text-right mb-4">
+            <Link href="/forgot-password" className="text-sm text-blue-500 hover:underline">
+              Forgot Password?
+            </Link>
           </div>
 
           <button
@@ -82,19 +81,18 @@ export default function LoginPage() {
         <p className="text-sm text-center text-black mt-4">
           Don't have an account?{" "}
           <Link href="/signup" className="text-blue-500 hover:underline">
-          Sign up here
+            Sign up here
           </Link>
         </p>
+      </div>
 
-        {/* Added SVG to the bottom right with margin */}
-      <div className="absolute bottom-0 right-0 mb-4 mr-4">
+      {/* Background SVG image */}
+      <div className="absolute bottom-0 right-0 mb-4 mr-4 z-0">
         <img
           src="/undraw_authentication_tbfc.svg"
           alt="Authentication"
           className="h-auto w-40 md:w-64"
         />
-      </div>
-
       </div>
     </div>
   );

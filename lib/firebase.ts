@@ -23,6 +23,9 @@ const app: FirebaseApp = getApps().length === 0
 // Initialize Firebase Auth using the app instance.
 export const auth = getAuth(app);
 
+// Export app so it can be used elsewhere (like forgot-password)
+export { app };
+
 // Only initialize Firebase Analytics on the client side.
 if (typeof window !== 'undefined') {
   isSupported().then((supported: boolean) => {

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getAuth } from 'firebase/auth';
-import { app } from '@/lib/firebaseConfig';
+import { app } from '@/lib/firebase';
 
 type Bookmark = {
   title: string;

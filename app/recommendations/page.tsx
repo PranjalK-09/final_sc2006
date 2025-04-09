@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
-import { app } from '@/lib/firebaseConfig';
+import { app } from '@/lib/firebase';
 import { useRouter } from 'next/navigation';
 
 type Course = {

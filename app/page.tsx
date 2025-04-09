@@ -1,7 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Added Framer Motion for smooth animations
+import { motion } from "framer-motion";
+import { GraduationCap, BarChart3, Rocket } from "lucide-react"; // Lucide icons
 
 export default function HomePage() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function HomePage() {
             Discover Your <span className="text-blue-600">Future</span> with EduPath
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-6">
-            Get personalized insights into careers and courses based on your interests. 
+            Get personalized insights into careers and courses based on your interests.
             Empowering students to make smarter decisions for tomorrow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -39,7 +40,7 @@ export default function HomePage() {
             </button>
           </div>
           <div className="mt-8 text-sm text-gray-500">
-            🔍 Explore trends in salaries, job vacancies, and course pathways with real-time recommendations.
+            Explore trends in salaries, job vacancies, and course pathways with real-time insights.
           </div>
         </motion.div>
 
@@ -75,24 +76,24 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Benefit Card 1 */}
-            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-              <div className="text-5xl mb-4">🎓</div>
+            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition text-left">
+              <GraduationCap className="text-blue-600 w-10 h-10 mb-4" />
               <h3 className="text-xl font-semibold text-gray-700 mb-2">Empower Your Decision-Making</h3>
               <p className="text-gray-600">
                 Discover detailed data on course pathways and career outcomes so you can plan your future confidently.
               </p>
             </div>
             {/* Benefit Card 2 */}
-            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-              <div className="text-5xl mb-4">📊</div>
+            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition text-left">
+              <BarChart3 className="text-blue-600 w-10 h-10 mb-4" />
               <h3 className="text-xl font-semibold text-gray-700 mb-2">Data-Driven Insights</h3>
               <p className="text-gray-600">
                 Explore visualizations on median salaries, job vacancies, and employment trends tailored for students.
               </p>
             </div>
             {/* Benefit Card 3 */}
-            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
-              <div className="text-5xl mb-4">🚀</div>
+            <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition text-left">
+              <Rocket className="text-blue-600 w-10 h-10 mb-4" />
               <h3 className="text-xl font-semibold text-gray-700 mb-2">Ready for Future Upgrades</h3>
               <p className="text-gray-600">
                 Our roadmap includes personalized recommendations and advanced filters, ensuring EduPath grows with your needs.

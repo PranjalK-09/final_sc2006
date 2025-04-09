@@ -299,7 +299,7 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      {/* Optional illustration */}
+      {/* illustration */}
       <div className="absolute bottom-0 right-0 z-0">
         <img
           src="/undraw_settings_2quf.svg"

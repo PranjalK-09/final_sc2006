@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db"; // ✅ Correct named import
+import { db } from "@/lib/db"; 
 
 export async function POST(req: Request) {
 	try {
@@ -29,13 +29,13 @@ export async function POST(req: Request) {
 			);
 		}
 
-		// ✅ Also update full_name in users table
+		// Also update full_name in users table
 		await db.execute(
 			`UPDATE users SET full_name = ? WHERE firebase_uid = ?`,
 			[name, firebase_uid]
 		);
 
-		return NextResponse.json({ success: true }); // ✅ Updated line
+		return NextResponse.json({ success: true }); 
 	} catch (error: any) {
 		console.error("Profile update error:", error);
 		return NextResponse.json(

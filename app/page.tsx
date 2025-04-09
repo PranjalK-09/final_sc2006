@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { motion } from "framer-motion"; // ✨ Added Framer Motion for smooth animations
+import { motion } from "framer-motion"; // Added Framer Motion for smooth animations
 
 export default function HomePage() {
   const router = useRouter();

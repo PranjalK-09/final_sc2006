@@ -4,7 +4,7 @@ import { getAuth } from 'firebase/auth';
 import type { FirebaseApp } from 'firebase/app';
 import { getAnalytics, isSupported } from "firebase/analytics";
 
-// Your Firebase configuration object
+// Firebase configuration object
 const firebaseConfig = {
   apiKey: "AIzaSyAgjg8d3kF5R4Zu0TVW-9b0p1S3FSroTj0",
   authDomain: "sc2006-e0d55.firebaseapp.com",

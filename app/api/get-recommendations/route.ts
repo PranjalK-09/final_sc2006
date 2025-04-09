@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import programs from "@/public/programs.json"; // Adjust if this is a .ts or .json file
+import programs from "@/public/programs.json"; 
 
 export async function POST(req: Request) {
 	try {

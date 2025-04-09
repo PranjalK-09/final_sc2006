@@ -8,13 +8,13 @@ import { register } from "@/lib/auth"; // Make sure this function returns Fireba
 export default function SignupPage() {
   const router = useRouter();
 
-  // 🔧 State
+  // State
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  // 🧠 Form handler
+  // Form handler
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -50,7 +50,6 @@ export default function SignupPage() {
     }
   };
 
-  // 🖼️ JSX
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-gray-100">
       {/* Signup Card */}
